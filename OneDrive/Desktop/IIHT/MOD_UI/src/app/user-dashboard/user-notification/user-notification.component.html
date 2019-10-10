@@ -1,0 +1,54 @@
+<div class="container-fluid py-5">
+  <div class="row py-5">
+    <div class="col-sm-4">
+      <div class="card" style="height:200px auto;">
+        <div class="card-header text-center text-white bg-info">
+          <p  id="text">Pending</p>
+        </div>
+        <ul *ngFor="let i of pendingRequest" class="list-group list-group-flush">
+          <li class="list-group-item">
+            <p *ngIf="( i.accept == false) && (i.rejectNotify == false)">You requested for {{i.skillname}} under
+              {{i.mentorName}} from {{i.startDate  | date: 'dd/MM/yyyy' }} to
+              {{i.endDate  | date: 'dd/MM/yyyy'}} on time {{i.timeSlot}} </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="height:200px auto;">
+        <div class="card-header text-center text-white bg-success">
+          <p id="text">Accepted</p>
+        </div>
+        <ul *ngFor="let i of acceptedTrainings" class="list-group list-group-flush">
+          <li class="list-group-item">
+            <p *ngIf="( i.accept == true) && (i.rejectNotify == false)">You requested is accepted for {{i.skillname}} under
+              {{i.mentorName}} from {{i.startDate  | date: 'dd/MM/yyyy' }} to
+              {{i.endDate  | date: 'dd/MM/yyyy'}} on time {{i.timeSlot}} </p>
+            <button *ngIf="i.trainingPaymentStatus == true && i.status != 'current' && i.status != 'completed'"
+              type="button" class="float-left btn btn-sm btn-primary" (click)="startTraining(i.id)">Start
+              Training</button>
+            <p *ngIf="i.status== 'current' && i.status != 'completed'" class="text-muted"> Your training is started </p>
+            <p *ngIf="i.status== 'completed' && i.status != 'current'" class="text-muted"> Your training is completed
+            </p>
+            <button *ngIf="i.trainingPaymentStatus == false" type="button" class="float-right btn btn-sm btn-primary"
+              (click)="payment(i.id)">Payment</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="height:200px auto;">
+        <div class="card-header text-center text-white bg-danger">
+          <p  id="text">Rejected</p>
+        </div>
+        <ul *ngFor="let i of rejectedTrainings" class="list-group list-group-flush">
+          <li class="list-group-item">
+            <p *ngIf="( i.rejectNotify == true) && (i.accept == false)">You request is rejected for {{i.skillname}} under
+              {{i.mentorName}} from {{i.startDate  | date: 'dd/MM/yyyy' }} to {{i.endDate  | date: 'dd/MM/yyyy'}}
+              on time {{i.timeSlot}} </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

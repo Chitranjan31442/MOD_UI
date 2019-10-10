@@ -1,0 +1,211 @@
+
+<div class="container-fluid py-3">
+    <div class="row py-5">
+        <div class="col-sm-4"></div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="card card-signin text-justify">
+                <div class="card-body">
+                    <button class="float-right btn btn-sm btn-primary text-uppercase" 
+                        type="submit">
+                        Back</button><br>
+                    <h3 class="my-2 card-title text-center">Add Training
+                    </h3>
+                    <form class="form-signin">
+                        <div class="form-label-group py-1">
+                            <label for="trainingid">Training ID</label>
+                            <input type="text" name="trainingid" id="trainingid" ngModel class="form-control"
+                                placeholder="Training Id" required autofocus>
+                        </div>
+                        
+
+                        <div class="form-label-group py-1">
+                            <label for="username">User Name</label>
+                            <select name="username" id="username" ngModel
+                                class=" rounded text-center mx-1 mb-2 dropdown">
+                                <option value="rohit">rohit</option>
+                            </select>
+                        </div>
+
+                        <div class="form-label-group py-1">
+                            <label for="username">Trainer Name</label>
+                            <select name="trainername" id="trainername" ngModel
+                                class=" rounded text-center mx-1 mb-2 dropdown">
+                                <option value="atul">atul
+                                </option>
+                            </select>
+                        </div>
+
+                      
+                        <div class="form-label-group py-1">
+                            <label for="commissionamount"> Commission Amount</label>
+                            <input type="text" id="commissionamount" name="commissionamount" ngModel
+                                class="form-control" placeholder="Commission Amount" required autofocus>
+                        </div>
+                        <div class="form-label-group py-1">
+                            <label for="receivedamount"> Received Amount</label>
+                            <input type="text" id="receivedamount" name="receivedamount" ngModel class="form-control"
+                                placeholder="Received Amount" required autofocus>
+                        </div>
+                        <div class="form-label-group py-1">
+                            <label for="startdate">Start Date</label>
+                            <input type="date" name="startdate" id="startdate" ngModel class="form-control"
+                                placeholder="Start Date" required autofocus>
+                        </div>
+                        <div class="form-label-group py-1">
+                            <label for="enddate">End Date</label>
+                            <input type="date" name="enddate" id="enddate" ngModel class="form-control"
+                                placeholder="End Date" required autofocus>
+                        </div>
+
+                        <div class="form-label-group py-1">
+                            <label for="progress">Status</label><br>
+                            <select ngModel name="status" class="mb-2 rounded text-center mx-1 dropdown">
+                                <option value="Not Started">Not Started</option>
+                                <option value="Ongoing">Ongoing</option>
+                                <option value="Completed">Completed</option>
+                            </select>
+                        </div>
+                        <div class="form-label-group py-1">
+                            <label for="progress">Progress</label>
+                            <select ngModel name="progress"
+                                class="mb-2 rounded text-center mx-1 dropdown">
+                                <option value="0%">0%</option>
+                                <option value="25%">25%</option>
+                                <option value="50%">50%</option>
+                                <option value="75%">75%</option>
+                                <option value="100%">100%</option>
+                            </select>
+                        </div>
+                        <div class="form-label-group py-1">
+                            <label class="font-weight-bold my-1">Timings</label><br>
+                            <ul class="list-group">
+                                <li class="list-group-item" >
+                                    <input type="radio"  name="timings"
+                                        value="9-6"  />
+                                    9-6
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="form-label-group text-center py-1">
+                            <label class="font-weight-bold my-1">List Of Technologies</label><br>
+                            <select  name="dropdownSelected"
+                                class="shadow-lg mb-2 rounded text-center mx-1 shadow-lg dropdown">
+                                <option value="java">java</option>
+                            </select>
+                        </div>
+                        <button class="my-2 btn btn-lg btn-primary btn-block text-uppercase" type="submit">
+                            Add Training</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+
+<!-- <app-navbar></app-navbar>
+<div class="container-fluid py-3">
+    <div class="row py-5">
+        <div class="col-sm-4"></div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="card card-signin text-justify">
+                <div class="card-body">
+                    <button class="float-right btn btn-sm btn-primary text-uppercase" (click)="backToHome()"
+                        type="submit">
+                        Back</button><br>
+                    <h3 class="my-2 card-title text-center">Add Training
+                    </h3>
+                    <form class="form-signin" #myform="ngForm" (submit)="onAdd(myform)">
+                        <p-toast position="top-center"></p-toast>
+                        <div class="form-label-group py-1">
+                            <label for="trainingid">Training ID</label>
+                            <input type="text" name="trainingid" id="trainingid" ngModel class="form-control"
+                                placeholder="Training Id" required autofocus>
+                        </div>
+                        
+
+                        <div class="form-label-group py-1">
+                            <label for="username">User Name</label>
+                            <select name="username" id="username" ngModel
+                                class=" rounded text-center mx-1 mb-2 dropdown">
+                                <option *ngFor="let u of userDropdown" [value]="u.userName">{{u.userName}}</option>
+                            </select>
+                        </div>
+
+                        <div class="form-label-group py-1">
+                            <label for="username">Trainer Name</label>
+                            <select name="trainername" id="trainername" ngModel
+                                class=" rounded text-center mx-1 mb-2 dropdown">
+                                <option *ngFor="let t of trainerDropdown" [value]="t.trainerName">{{t.trainerName}}
+                                </option>
+                            </select>
+                        </div>
+
+                      
+                        <div class="form-label-group py-1">
+                            <label for="commissionamount"> Commission Amount</label>
+                            <input type="text" id="commissionamount" name="commissionamount" ngModel
+                                class="form-control" placeholder="Commission Amount" required autofocus>
+                        </div>
+                        <div class="form-label-group py-1">
+                            <label for="receivedamount"> Received Amount</label>
+                            <input type="text" id="receivedamount" name="receivedamount" ngModel class="form-control"
+                                placeholder="Received Amount" required autofocus>
+                        </div>
+                        <div class="form-label-group py-1">
+                            <label for="startdate">Start Date</label>
+                            <input type="date" name="startdate" id="startdate" ngModel class="form-control"
+                                placeholder="Start Date" required autofocus>
+                        </div>
+                        <div class="form-label-group py-1">
+                            <label for="enddate">End Date</label>
+                            <input type="date" name="enddate" id="enddate" ngModel class="form-control"
+                                placeholder="End Date" required autofocus>
+                        </div>
+
+                        <div class="form-label-group py-1">
+                            <label for="progress">Status</label><br>
+                            <select ngModel name="status" class="mb-2 rounded text-center mx-1 dropdown">
+                                <option value="Not Started">Not Started</option>
+                                <option value="Ongoing">Ongoing</option>
+                                <option value="Completed">Completed</option>
+                            </select>
+                        </div>
+                        <div class="form-label-group py-1">
+                            <label for="progress">Progress</label>
+                            <select ngModel name="progress"
+                                class="mb-2 rounded text-center mx-1 dropdown">
+                                <option value="0%">0%</option>
+                                <option value="25%">25%</option>
+                                <option value="50%">50%</option>
+                                <option value="75%">75%</option>
+                                <option value="100%">100%</option>
+                            </select>
+                        </div>
+                        <div class="form-label-group py-1">
+                            <label class="font-weight-bold my-1">Timings</label><br>
+                            <ul class="list-group">
+                                <li class="list-group-item" *ngFor="let item of timingsList">
+                                    <input type="radio" [(ngModel)]="radioSelected" name="timings"
+                                        value="{{item.value}}" (change)="onItemChange(item)" />
+                                    {{item.name}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="form-label-group text-center py-1">
+                            <label class="font-weight-bold my-1">List Of Technologies</label><br>
+                            <select [(ngModel)]="dropdownSelected" name="dropdownSelected"
+                                class="shadow-lg mb-2 rounded text-center mx-1 shadow-lg dropdown">
+                                <option *ngFor="let t of lotList" [value]="t.value">{{t.name}}</option>
+                            </select>
+                        </div>
+                        <button class="my-2 btn btn-lg btn-primary btn-block text-uppercase" type="submit">
+                            Add Training</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+<app-footer></app-footer> -->

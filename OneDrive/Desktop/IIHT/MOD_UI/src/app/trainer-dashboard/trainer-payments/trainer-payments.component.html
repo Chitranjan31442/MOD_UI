@@ -1,0 +1,25 @@
+<div class="container-fluid">
+<section class="my-2 container">
+  <h3 class="text-center text-capitalize p-4">All Payments</h3>
+  <table class="my-5 table table-striped text-center table-responsive-sm table-sm" width="50%">
+    <thead>
+      <tr class="thead-dark">
+        <th scope="col">Technology</th>
+        <th scope="col">Fees</th>
+        <th scope="col">Trainer Fees</th>
+        <th scope="col">With Draw Money</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of paymentSuccess">
+        <td scope="row">{{i.skillName}}</td>
+        <td>{{i.fees}}</td>
+        <td>{{i.trainerFees}}</td>
+        <td>
+          <a class="btn  btn-md btn-success" (click)="Withdraw()">WithDraw</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+</div>

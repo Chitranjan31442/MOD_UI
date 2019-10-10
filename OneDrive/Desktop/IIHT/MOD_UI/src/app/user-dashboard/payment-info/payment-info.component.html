@@ -1,0 +1,28 @@
+<div class="container-fluid">
+<section class="my-2 container text-center">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center text-capitalize p-4">Payment - Info</h3>
+            <table class="my-5 table table-striped table-responsive-sm table-sm" width="50%">
+                <thead>
+                    <tr class="thead-dark">
+                        <th scope="col">Techonolgy</th>
+                        <th scope="col">Payment Status</th>
+                        <th scope="col">Tax</th>
+                        <th scope="col">Fees</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let i of paymentSuccess">
+                        <td scope="row">{{i.skillName}}</td>
+                        <td>Success</td>
+                        <td>Rs. 500(inclusive)</td>
+                        <td>Rs. {{i.fees}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+</div>

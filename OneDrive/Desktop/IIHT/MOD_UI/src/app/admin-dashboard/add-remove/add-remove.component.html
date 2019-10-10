@@ -1,0 +1,87 @@
+<div class="container-fluid">
+<section class="my-2 container">
+  <h3 class="text-center text-capitalize p-4">Technology</h3>
+
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+
+        <form #myForm="ngForm" [formGroup]="techAdd" autocomplete="off">
+          <div class="modal-header">
+            <h4 class="modal-title">Add Skill</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+
+            <div class="form-group required">
+              <label>Name</label>
+              <input class="form-control" placeholder="eg: Java FSE" formControlName="name">
+              <small class="text-danger"
+                *ngIf="techAdd.get('name').touched && techAdd.get('name').errors?.required">This
+                field is mandatory</small>
+            </div>
+
+            <div class="form-group required">
+              <label>Toc</label>
+              <input type="text" class="form-control" placeholder="eg: Spring, Hibernate.." formControlName="toc">
+              <small class="text-danger" *ngIf="techAdd.get('toc').touched && techAdd.get('toc').errors?.required">This
+                field is mandatory</small>
+            </div>
+
+            <div class="form-group required">
+              <label>Prerequisites</label>
+              <input type="text" class="form-control" placeholder="eg: Core Java" formControlName="prerequisites">
+              <small class="text-danger"
+                *ngIf="techAdd.get('prerequisites').touched && techAdd.get('prerequisites').errors?.required">This
+                field is mandatory</small>
+            </div>
+              
+            <div class="form-group required">
+                <label>Fees</label>
+                <input type="text" class="form-control" placeholder="eg: 4000" formControlName="fees">
+                <small class="text-danger"
+                  *ngIf="techAdd.get('fees').touched && techAdd.get('fees').errors?.required">This
+                  field is mandatory</small>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary pull-right" (click)="addingTechnology();myForm.reset()"
+              [disabled]="!techAdd.valid" >ADD</button>
+              <button type="button" class="btn btn-danger btn-md" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <a href="#myModal" class="trigger-btn float-right d-inline my-3 add-new" data-toggle="modal"><button
+        class="btn btn-success"><i class="fas fa-plus"></i></button></a>
+  </div>
+
+
+  <table class="my-5 table table-sm" width="50%">
+    <thead>
+      <tr class="thead-dark">
+        <th scope="col">Name</th>
+        <th scope="col">Toc</th>
+        <th scope="col">Fees</th>
+        <th scope="col">Prerequisites</th>
+        <th scope="col" class="text-center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of skillData">
+        <td scope="row">{{i.name}}</td>
+        <td>{{i.toc}}</td>
+        <td>{{i.prerequisites}}</td>
+        <td>{{i.fees}}</td>
+        <td class="text-center">
+            <button class="btn btn-sm btn-func btn-danger mx-3" (click)="removeTech(i.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
+</div>

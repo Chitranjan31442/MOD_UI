@@ -1,0 +1,64 @@
+<div class="container-fluid">
+<section class="my-2 container" *ngIf="users">
+  <h3 class="text-center text-capitalize p-4">All Users</h3>
+
+  <table class="my-5 table table-striped text-center table-responsive-sm table-sm" width="50%">
+    <thead>
+      <tr class="thead-dark">
+
+        <th scope="col">UserName</th>
+        <th scope="col">Email</th>
+        <th scope="col">Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let i of users">
+        <td scope="row">{{i.userName}}</td>
+        <td>{{i.email}}</td>
+        <td class="text-center">
+          <div *ngIf="i.active">
+            <button class="btn btn-sm btn-func btn-danger mx-3" (click)="block(i.id)">Block</button>
+          </div>
+          <div *ngIf="!i.active">
+            <button class="btn btn-sm btn-func btn-primary" (click)="unBlock(i.id)">UnBlock</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="my-2 container" *ngIf="mentors">
+  <h3 class="text-center text-capitalize p-4">All Mentors</h3>
+
+
+  <table class="my-5 table table-striped text-center table-responsive-sm table-sm" width="50%">
+      <thead>
+        <tr class="thead-dark">
+  
+          <th scope="col">UserName</th>
+          <th scope="col">Email</th>
+          <th scope="col">Action</th>
+  
+        </tr>
+      </thead>
+      <tbody>
+  
+        <tr *ngFor="let i of mentors">
+          <td scope="row">{{i.userName}}</td>
+          <td>{{i.email}}</td>
+          <td class="text-center">
+            <div *ngIf="i.active">
+              <button class="btn btn-sm btn-func btn-danger mx-3" (click)="block(i.id)">Block</button>
+            </div>
+            <div *ngIf="!i.active">
+              <button class="btn btn-sm btn-func btn-primary" (click)="unBlock(i.id)">UnBlock</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</section>
+</div>

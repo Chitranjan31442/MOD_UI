@@ -1,0 +1,14 @@
+.table {
+    border-radius: 5px;
+    width: 50%;
+    margin: 0px auto;
+    float: none;
+}
+.container-fluid {
+    background: linear-gradient(to left, #055734, #99f0cc,#055734);
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 650px;
+}

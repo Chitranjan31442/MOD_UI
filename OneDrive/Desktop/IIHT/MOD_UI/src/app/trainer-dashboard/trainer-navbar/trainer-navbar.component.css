@@ -1,0 +1,26 @@
+
+a:not([href]):not([tabindex]) {
+    color: white;
+    text-decoration: none;
+    font-size:25px;
+}
+a.navbar-brand {
+    font-family: Apercu, sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
+    text-transform: none;
+    color:#07613c;
+    text-shadow: 2px 2px 4px #7bfaba;
+  }
+
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

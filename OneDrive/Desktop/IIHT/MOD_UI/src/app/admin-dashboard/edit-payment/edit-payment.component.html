@@ -1,0 +1,36 @@
+<div class="container-fluid my-5">
+    <div class="row py-5">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="card card-signin">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Edit Payment and Comission Details</h3>
+
+                    <div class="my-4" *ngIf="model">
+
+                        <h5> Total Fees {{model.fees}}</h5>
+
+                        <form (submit)="updatingPaymentAndCommision();">
+
+                            <div class="form-group">
+                                <label>Commision</label>
+                                <input type="text" class="form-control" [(ngModel)]="model.commision" name="commision"
+                                    required="required">
+                            </div>
+                            <label>Trainer Fees</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]="model.trainerFees"
+                                    name="trainerFees" required="required">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Edit</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>

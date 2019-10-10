@@ -1,0 +1,12 @@
+#text:hover
+{
+    color: black
+}
+.container-fluid {
+    background: linear-gradient(to left, #055734, #99f0cc,#055734);
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 650px;
+}

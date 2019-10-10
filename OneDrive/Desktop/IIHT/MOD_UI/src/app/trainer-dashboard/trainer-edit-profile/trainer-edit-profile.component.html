@@ -1,0 +1,54 @@
+<div class="container-fluid my-5">
+    <div class="row py-5">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="card card-signin">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Edit Trainer Profile</h3>
+
+                    <div class="my-4" *ngIf="model">
+
+                        <form (submit)="onSubmit();">
+
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" class="form-control" [(ngModel)]="model.firstName" name="firstName"
+                                    required="required">
+                            </div>
+                            <label>Last Name</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]="model.lastName"
+                                    name="lastName" required="required">
+                            </div>
+                            <label>User Name</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]="model.userName"
+                                    name="userName" required="required">
+                            </div>
+                            <label>Contact Number</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]="model.contactNumber"
+                                    name="contactNumber" required="required">
+                            </div>
+                            <label>Year Of Experience</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]="model.yearOfExperience"
+                                    name="yearOfExperience" required="required">
+                            </div>
+                            <label>Linkedin Url</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]="model.linkedinUrl"
+                                    name="linkedinUrl" required="required">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Edit</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>

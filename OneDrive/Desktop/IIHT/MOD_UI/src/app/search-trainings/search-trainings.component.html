@@ -1,0 +1,73 @@
+<div class="container-fluid">
+<section class="my-5 container">
+    <form class="form-signin">
+        <div class="row">
+            <div class="col-md-8 com-sm-4">
+                <div class="form-group">
+                    <label style="color: rgb(175, 246, 248)">Technology</label>
+                    <select [(ngModel)]="tech" name="tech" class="form-control mb-2 rounded text-center dropdown">
+                        <option value="" disabled>Please Select</option>
+                        <option *ngFor="let t of skillData" value="{{t.name}}">{{t.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4 com-sm-4">
+                <div class="form-group my-2">
+                    <label></label>
+                    <button class="btn btn-md btn-info btn-block btn-success" (click)="onSubmit()">Search Trainer</button>
+                </div>
+            </div>
+
+            <div class="col-sm-2 col-sm-2"></div>
+            
+        </div>
+    </form>
+</section>
+
+<div *ngIf="status1" class="my-5 container">
+    <div class="jumbotron">
+        <div class="h4 text-center">
+            <p> No search result found </p>
+        </div>
+    </div>
+</div>
+<div *ngIf="status2" class="container py-4">
+    <div class="row my-2">
+        <div class="col-md-6 text-center">
+            <p class="search h4"> Search Result for " {{tech}} "
+            </p>
+        </div>
+        <div class="col-md-3 text-center"></div>
+        <div class="col-md-3 text-center">
+            <div class="display-pagination-control">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-5">
+        <div *ngFor="let i of showSearchData | filter: term | paginate: { itemsPerPage: 4, currentPage: p }"
+            class="col-md-4 col-12">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img/user.jpg" alt="No Image">
+                <div class="card-body">
+                    <label class="font-weight-bolder"> Name : </label>
+                    <p class="d-inline card-text"> {{i.firstName}} {{i.lastName}} </p><br />
+                    <label class="font-weight-bolder"> Expertise Technology : </label>
+                    <p class="d-inline card-text"> {{i.trainerTechnology}} </p><br>
+                    <label class="font-weight-bolder"> Experience: </label>
+                    <p class="d-inline card-text"> {{i.yearOfExperience}} </p><br>
+                    <label class="font-weight-bolder"> LinkeIn Profile : </label>
+                    <p class="d-inline card-text"><a target="_blank" href="{{i.linkedinUrl}}"> Click </a></p>
+                    <hr>
+                    <div class="float-right">
+                        <button class="btn btn-md btn-success" (click)="proposalSent(i.id)">
+                            Enroll
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

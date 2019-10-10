@@ -1,0 +1,39 @@
+<app-admin-navbar></app-admin-navbar>
+
+<nav class="navbar navbar-expand-lg" style="background: #0c8a55;">
+    <button class="navbar-toggle navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        More<span class="navbar-toggler-icon icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="nav navbar-nav nav-pills nav-justified w-100">
+
+            <li class="nav-item">
+                <a routerLink="all-payments" class="nav-link"><button class="rounded btn btn-sm">
+                        Payments
+                </button></a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="current-trainings-info" class="nav-link"><button class="rounded btn btn-sm">Current
+                        Training</button></a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="completed-trainings-info" class="nav-link"><button class="rounded btn btn-sm">Completed
+                        Trainings</button></a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="add-block-user-mentor" class="nav-link"><button class="rounded btn btn-sm">Add /
+                        Block</button></a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="add-remove-technology" class="nav-link"><button class="rounded btn btn-sm">Add /
+                        Remove</button></a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+
+<router-outlet></router-outlet>
+<!-- <app-footer></app-footer> -->

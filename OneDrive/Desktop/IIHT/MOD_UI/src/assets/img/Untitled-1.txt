@@ -1,0 +1,135 @@
+<section>
+  <div class="bg-img">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand ml-3" routerLinkActive="true" routerLink="/">Mentor On Demand</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <a class="nav-link" routerLink="/login" routerLinkActive="true">
+          <button class="btn btn-primary btn-md text-white text-center" style="width:130px;">Login</button></a>
+        <a class="nav-link" routerLink="/register" routerLinkActive="true">
+          <button class="btn btn-success btn-md text-white text-center" style="width:130px;">Register</button></a>
+      </div>
+    </nav>
+
+    <p-toast position="top-center"></p-toast>
+
+    <div class="text-center bgtext">
+      <h1>We train you to build your skills and develop your future </h1>
+
+
+      <form class="form-signin" (submit)="navToSearch();">
+        <select  [(ngModel)]="selectedTechnology" name="selectedTechnology"
+          (change)="onSelectTrainer($event.target.value)"
+          class="dropdown shadow-lg mb-2 rounded text-center mx-1 shadow-lg">
+          <option *ngFor="let t of lotList" [value]="t.value">{{t.name}}</option>
+        </select>
+
+        <select *ngIf="status1" [(ngModel)]="selectedTimings" name="selectedTimings"
+          class="shadow-lg mb-2 rounded text-center mx-1 dropdown">
+          <option *ngFor="let i of timingsList" [value]="i.value">{{i.name}}</option>
+        </select>
+        <br>
+        <button class="btn btn-info btn-md text-white my-1">Search</button>
+
+      </form>
+      <div class="my-4">
+        <button class="btn btn-success btn-lg text-white button-start" (click)="navToTRegister();">Start as
+          Mentor</button>
+
+        <button class="btn btn-success btn-lg text-white mx-2 button-start" (click)="navToURegister();">Start as
+          User</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-fluid ">
+    <div class="text-center shadow-lg my-5 mb-5 p-4">
+      <h2>Grow your learning</h2>
+      <h2>with advice from vetted growth mentors</h2>
+      <p class="text-muted my-5 p-4">Receive a world class <strong>EDUCATION</strong> here </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-fluid text-center my-4 ">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 py-4">
+        <img class="rounded" src="../../assets/img1.jpeg" width="90%" />
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 py-4">
+        <img class="rounded" src="../../assets/img2.jpeg" width="90%" />
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+<section>
+  <div class="container-fluid text-center my-4 ">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 py-4" style="background-image: url('../../assets/create.jpeg');background-repeat: no-repeat;background-size: 20px 15px;">
+        
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 text-center text-muted">
+        <h3 class="my-5 py-5">Your Future with lots of learning and hands on.</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="parallax"></div>
+</section>
+
+
+<section>
+
+  <footer class="container-fluid text-center" style="background-color: lightgray;margin-top:0px">
+    <div class="row">
+      <div class="col-sm-4 py-5">
+        <h4>Company Information</h4>
+        <hr>
+        <div class="container">
+          <img src="../../assets/mentor.png" width="90%" />
+        </div>
+      </div>
+      <div class="col-sm-4 py-5">
+        <h4 class="font-weight-bold">Links</h4>
+        <hr>
+        <div class="mx-xl-5 ">
+          <p>
+            <a class="text-dark" routerLink="/register"> User Registeration </a>
+          </p>
+          <p>
+            <a class="text-dark" routerLink="/tregister"> Trainer Registeration </a>
+          </p>
+          <p>
+            <a class="text-dark" routerLink="/login"> Login </a>
+          </p>
+          <p>
+            <a class="text-dark" routerLink="/contact"> Contact Us </a>
+          </p>
+        </div>
+      </div>
+      <div class="col-sm-4 py-5">
+        <h4 class="font-weight-bold">Contact Details</h4>
+        <hr class="hrcolor ">
+        <p class="text-center">
+          <i class="fas fa-home mr-3 "></i>Perungudi, Chennai</p>
+        <p class="text-center">
+          <i class="fas fa-envelope mr-3"></i> mentorondemand@gmail.com</p>
+        <p class="text-center">
+          <i class="fas fa-phone mr-3"></i>18009724653 </p>
+
+      </div>
+    </div>
+  </footer>
+</section>

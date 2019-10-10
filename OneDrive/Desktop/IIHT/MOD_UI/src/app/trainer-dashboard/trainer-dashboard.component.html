@@ -1,0 +1,32 @@
+<app-trainer-navbar></app-trainer-navbar>
+<nav class="navbar navbar-expand-lg" style="background: #13b471;">
+    <button class="navbar-toggle navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        More<span class="navbar-toggler-icon icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="nav navbar-nav nav-pills nav-justified w-100">
+
+            <li class="nav-item">
+                <a routerLink="trainer-current-trainings" class="nav-link"><button class="rounded btn btn-sm">Current
+                        Training</button></a>
+            </li>
+            <li>
+                <a routerLink="trainer-profile" class="nav-link"><button class="rounded btn btn-sm">Trainer Profile</button></a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="trainer-completed-trainings" class="nav-link"><button
+                        class="rounded btn btn-sm">Completed
+                        Trainings</button></a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="trainer-payment-information" class="nav-link"><button
+                        class="rounded btn btn-sm">Payment</button></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!-- <app-footer></app-footer> -->

@@ -1,0 +1,16 @@
+.img-thumbnail {
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    max-width: 52%;
+    height: auto;
+}
+.container-fluid {
+    background: linear-gradient(to left, #055734, #99f0cc,#055734);
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 650px;
+}

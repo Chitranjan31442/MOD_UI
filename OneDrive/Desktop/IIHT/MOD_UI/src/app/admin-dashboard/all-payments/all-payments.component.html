@@ -1,0 +1,66 @@
+<div class="container-fluid">
+<section class="my-2 container">
+
+<div class="row">
+  <div class="col-md-12">
+      <h3 class="text-center text-capitalize p-4">All Payments Users</h3>
+
+      <table class="my-5 table table-sm table-striped table-responsive-sm " width="50%">
+        <thead>
+          <tr class="thead-dark">
+            <th scope="col">User Id</th>
+            <th scope="col">Technology</th>
+            <th scope="col">Fees</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of userPayment">
+            <td scope="row">{{i.userId}}</td>
+            <td>{{i.skillName}}</td>
+            <td>{{i.paymentStatus}}</td>
+            <td>{{i.fees}}</td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </div>
+</div>
+ 
+</section>
+
+<section class="my-2 container">
+
+  
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="text-center text-capitalize p-4">All Payments Mentors</h3>
+
+        <table class="my-5 table table-striped table-responsive-sm table-sm" width="50%">
+          <thead>
+            <tr class="thead-dark">
+              <th scope="col">Trainer Id</th>
+              <th scope="col">Technology</th>
+              <th scope="col">Fees</th>
+              <th scope="col">Commission</th>
+              <th scope="col">Trainer Fees</th>
+              <th scope="col">Edit Payment/Commission</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of userPayment">
+              <td scope="row">{{i.trainerId}}</td>
+              <td>{{i.skillName}}</td>
+              <td>{{i.fees}}</td>
+              <td>{{i.commision}}</td>
+              <td>{{i.trainerFees}}</td>
+              <td class="text-center">
+                <a class="btn  mybtn  btn-success" (click)="moveToEdit(i.id)"><i class="fas fa-pencil-alt"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</section>
+</div>

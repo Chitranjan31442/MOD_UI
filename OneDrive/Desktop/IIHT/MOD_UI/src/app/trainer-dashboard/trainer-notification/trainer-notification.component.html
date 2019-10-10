@@ -1,0 +1,51 @@
+<div class="container-fluid py-5">
+    <div class="row py-5">
+        <div class="col-sm-4">
+            <div class="card" style="height:200px auto;">
+                <div class="card-header text-center text-white bg-info">
+                    Pending
+                </div>
+                <ul  *ngFor="let i of pendingApproval" class="list-group list-group-flush">
+                    <li  class="list-group-item">
+                        <p *ngIf="( i.accept == false) && (i.rejectNotify == false)">{{i.userName}} requested for
+                            {{i.skillname}} from {{i.startDate  | date: 'dd/MM/yyyy' }} to
+                            {{i.endDate  | date: 'dd/MM/yyyy'}} on time {{i.timeSlot}} </p>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-sm btn-success float-left" (click)="acceptInvite(i.id)">Accept</button>
+                        <button type="button" class="btn btn-sm btn-danger float-right" (click)="rejectInvite(i.id)">Reject</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div *ngIf="acceptedTrainings" class="card" style="height:200px auto;">
+                <div class="card-header text-center text-white bg-success">
+                    Accepted
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li *ngFor="let i of acceptedTrainings" class="list-group-item">
+                        <p *ngIf="( i.accept == true) && (i.rejectNotify == false)">you accepted the request of
+                            {{i.userName}} for
+                            {{i.skillname}} from {{i.startDate  | date: 'dd/MM/yyyy' }} to
+                            {{i.endDate  | date: 'dd/MM/yyyy'}} on time {{i.timeSlot}} </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card" style="height:200px auto;">
+                <div class="card-header text-center text-white bg-danger">
+                    Rejected Request
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li *ngFor="let i of yourRejection" class="list-group-item">
+                        <p *ngIf="( i.rejectNotify == true) && (i.accept == false)">{{i.userName}} requested for
+                                {{i.skillname}} from {{i.startDate  | date: 'dd/MM/yyyy' }} to
+                                {{i.endDate  | date: 'dd/MM/yyyy'}} on time {{i.timeSlot}} </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

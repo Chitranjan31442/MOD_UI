@@ -1,0 +1,62 @@
+<div class="container-fluid">
+<section class="my-2 container" *ngIf="compT">
+  <h3 class="text-center text-capitalize p-4">Completed Trainings</h3>
+
+  <table class="my-5 table table-striped text-center table-responsive-sm table-sm" width="50%">
+    <thead>
+      <tr class="thead-dark">
+
+        <th scope="col">Techonolgy</th>
+        <th scope="col">Trainer Name</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Timings</th>
+        <th scope="col">Progress</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let i of compT">
+        <td>{{i.skillname}}</td>
+        <td>{{i.mentorName}}</td>
+        <td>{{i.startDate | date: 'dd/MM/yyyy'}}</td>
+        <td>{{i.endDate | date: 'dd/MM/yyyy'}}</td>
+        <td>{{i.timeSlot}}</td>
+        <td>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100"
+              aria-valuemin="0" aria-valuemax="100" [style.width.px]="i.progress">
+              {{i.progress}}
+            </div>
+          </div>
+        </td>
+        <td>{{i.rating}}</td>
+        <td>
+          <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal"
+            (click)="giveRatings(i.id)">Give Ratings</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content" *ngIf="model">
+        <form>
+          <div class="modal-header">
+            <h4 class="modal-title">Update Ratings</h4>
+          </div>
+          <div class="modal-body text-center">
+            <label> Ratings </label><input name="rating" [(ngModel)]="model.rating">
+          </div>
+          <div class="modal-footer">
+            <button class="btn d-inline" (click)="uodateRatings(model.id)"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
