@@ -24,6 +24,9 @@ a.navbar-brand {
   color:#07613c;
   text-shadow: 2px 2px 4px #7bfaba;
 }
+.btn-info:hover{
+  background:rgb(211, 198, 21);
+}
 .navbar-light .navbar-nav .nav-link {
   color: whitesmoke;
 }
@@ -57,22 +60,22 @@ a.navbar-brand {
 
 #information {
   width: auto;
-  background: #0c8a55;
+  background: #441c02;
 }
 
 #information i {
-  color:#36d391;
+  color:#fdef25;
   font-size: 48px;
   display: inline-block;
   line-height: 1;
 }
 
 #information h4 a:hover {
-  color:#88f7c8;
+  color:#f2ff37;
 }
 
 #information h4 a {
-  color: #fff;
+  color: rgb(255, 255, 255);
 }
 
 h1 {

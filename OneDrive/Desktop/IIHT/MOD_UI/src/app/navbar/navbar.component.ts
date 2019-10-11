@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
   notification()
   {
     if (this.userData.role === 1) {
-      alert("No Notification Available...")
+      alert("No Notification Available.")
     } else if (this.userData.role === 2) {
       this.router.navigateByUrl("/trainer-dashboard/trainer-notification");
     } else if (this.userData.role == 3) {
@@ -46,7 +46,7 @@ export class NavbarComponent implements OnInit {
   {
     localStorage.clear();
   this.router.navigate(['home']);
-  alert("Logged Out Successfully...");
+  alert("Logged Out Successfully.");
   }
 
 

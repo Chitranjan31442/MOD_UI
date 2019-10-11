@@ -1,10 +1,10 @@
 <div class="container-fluid py-5">
     <div class="row py-5">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
             <div class="card card-signin">
                 <div class="card-body">
-                    <h3 class="card-title text-center" >Login</h3>
+                    <h3 class="card-title text-center"  style="font-family:'Times New Roman', Times, serif; color: #0c8a55; text-decoration: underline;">Login</h3>
                     
                     <p-toast position="top-center"></p-toast>
                     <form [formGroup]="UserLogin" autocomplete="off" (submit)="onSubmit()">
@@ -34,33 +34,14 @@
                             </div>
                         </div>
                     </form>
-
-
-
-                    <!-- <form class="form-signin" >
-                       
-                        <div class="form-label-group py-1">
-                            <label for="email">Email address</label>
-                            <input type="email" name="email" id="email"  class="form-control"
-                                placeholder="Email Address" required autofocus>
-                        </div>
-                        <div class="form-label-group py-1">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" id="password" 
-                                class="form-control" placeholder="Password" required autofocus>
-                        </div>
-
-                        <button class="my-4 btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign
-                            In</button>
-                    </form> -->
                     <div class="text-center my-2">
-                        <p>Not registered yet ? <a class="text-center" routerLink="/user-register">User</a></p>
+                        <p>Not registered yet ?<br>Register as an <a class="text-center" routerLink="/user-register"  style="font-family:'Times New Roman', Times, serif; color: #0c8a55; text-decoration: underline;"> User</a></p>
                         
-                        <p>Not registered yet ? <a class="text-center" routerLink="/trainer-register">Trainer</a></p>
+                        <p>Not registered yet ?<br>Register as a <a class="text-center" routerLink="/trainer-register"  style="font-family:'Times New Roman', Times, serif; color: #0c8a55; text-decoration: underline;"> Trainer</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-4"></div>
+        <div class="col-sm-3"></div>
     </div>
 </div>

@@ -8,40 +8,36 @@
 
         <form #myForm="ngForm" [formGroup]="techAdd" autocomplete="off">
           <div class="modal-header">
-            <h4 class="modal-title">Add Skill</h4>
+            <h4 class="modal-title" style="text-decoration: underline;">Add Skill</h4>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           </div>
           <div class="modal-body">
 
             <div class="form-group required">
               <label>Name</label>
-              <input class="form-control" placeholder="eg: Java FSE" formControlName="name">
+              <input class="form-control" placeholder="eg: C++ FS" formControlName="name">
               <small class="text-danger"
-                *ngIf="techAdd.get('name').touched && techAdd.get('name').errors?.required">This
-                field is mandatory</small>
+                *ngIf="techAdd.get('name').touched && techAdd.get('name').errors?.required">This field can't be empty.</small>
             </div>
 
             <div class="form-group required">
               <label>Toc</label>
-              <input type="text" class="form-control" placeholder="eg: Spring, Hibernate.." formControlName="toc">
-              <small class="text-danger" *ngIf="techAdd.get('toc').touched && techAdd.get('toc').errors?.required">This
-                field is mandatory</small>
+              <input type="text" class="form-control" placeholder="ex: Advance" formControlName="toc">
+              <small class="text-danger" *ngIf="techAdd.get('toc').touched && techAdd.get('toc').errors?.required">This field can't be empty.</small>
             </div>
 
             <div class="form-group required">
-              <label>Prerequisites</label>
-              <input type="text" class="form-control" placeholder="eg: Core Java" formControlName="prerequisites">
+              <label>Pre-requisites</label>
+              <input type="text" class="form-control" placeholder="ex: C++" formControlName="prerequisites">
               <small class="text-danger"
-                *ngIf="techAdd.get('prerequisites').touched && techAdd.get('prerequisites').errors?.required">This
-                field is mandatory</small>
+                *ngIf="techAdd.get('prerequisites').touched && techAdd.get('prerequisites').errors?.required">This field can't be empty.</small>
             </div>
               
             <div class="form-group required">
                 <label>Fees</label>
-                <input type="text" class="form-control" placeholder="eg: 4000" formControlName="fees">
+                <input type="text" class="form-control" placeholder="ex: 5000" formControlName="fees">
                 <small class="text-danger"
-                  *ngIf="techAdd.get('fees').touched && techAdd.get('fees').errors?.required">This
-                  field is mandatory</small>
+                  *ngIf="techAdd.get('fees').touched && techAdd.get('fees').errors?.required">This field can't be empty.</small>
               </div>
           </div>
           <div class="modal-footer">
@@ -56,17 +52,17 @@
 
   <div class="container">
     <a href="#myModal" class="trigger-btn float-right d-inline my-3 add-new" data-toggle="modal"><button
-        class="btn btn-success"><i class="fas fa-plus"></i></button></a>
+        class="btn btn-success"><i class="fa fa-plus"></i>  ADD</button></a>
   </div>
 
 
-  <table class="my-5 table table-sm" width="50%">
+  <table class="my-5 table table-sm" width="70%">
     <thead>
       <tr class="thead-dark">
         <th scope="col">Name</th>
-        <th scope="col">Toc</th>
+        <th scope="col">ToC</th>
         <th scope="col">Fees</th>
-        <th scope="col">Prerequisites</th>
+        <th scope="col">Pre-requisites</th>
         <th scope="col" class="text-center">Action</th>
       </tr>
     </thead>
@@ -77,7 +73,7 @@
         <td>{{i.prerequisites}}</td>
         <td>{{i.fees}}</td>
         <td class="text-center">
-            <button class="btn btn-sm btn-func btn-danger mx-3" (click)="removeTech(i.id)">Delete</button>
+            <button class="btn btn-sm btn-func btn-danger mx-3" (click)="removeTech(i.id)"><i class="fa fa-trash" aria-hidden="true"></i>  Delete</button>
         </td>
       </tr>
     </tbody>

@@ -6,6 +6,10 @@ a {
     text-decoration: none;
   }
 
+  .rounded:hover{
+    background:rgb(211, 198, 21);
+  }
+
   .btn:hover{
     color:white;
   }

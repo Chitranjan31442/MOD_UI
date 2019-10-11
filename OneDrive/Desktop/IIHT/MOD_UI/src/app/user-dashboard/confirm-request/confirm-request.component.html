@@ -1,7 +1,7 @@
 <div class="container-fluid py-3">
         <div class="row py-5">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-6">
             <div class="card card-signin">
                 <div class="card-body">
                     <h3 class="card-title text-center">Send Request</h3>
@@ -31,7 +31,7 @@
 
                         <div class="form-label-group py-1">
                             <label for="yourName">Your Name</label>
-                            <input type="text" name="yourName" disabled value="Username" class="form-control" required
+                            <input type="text" name="yourName" disabled value={{model.firstName}} class="form-control" required
                                 autofocus>
                         </div>
 
@@ -46,32 +46,6 @@
                             <input type="text" name="email" id="email" disabled value="{{trainerData.email}}"
                                 class="form-control" required autofocus>
                         </div>
-
-                        <!-- <div *ngIf="skillData" class="form-label-group py-1">
-                            <label for="name">Technology</label>
-                            <input type="text" id="name" name="name" disabled value="{{skillData.name}}"
-                                class="form-control" required autofocus>
-                        </div>
-
-                        <div *ngIf="skillData" class="form-label-group py-1">
-                            <label for="fees">Fees</label>
-                            <input type="text" id="fees" name="fees" disabled [(ngModel)]="skillData.fees"
-                                value="{{skillData.fees}}" class="form-control" required autofocus>
-                        </div>
-
-                        <div *ngIf="skillData" class="form-label-group py-1">
-                            <label for="toc">TOC</label>
-                            <input type="text" name="toc" id="toc" disabled [(ngModel)]="skillData.toc"
-                                value="{{skillData.toc}}" class="form-control" required autofocus>
-                        </div>
-
-                        <div *ngIf="skillData" class="form-label-group py-1">
-                            <label for="prerequisites">Prerequisites</label>
-                            <input type="text" name="prerequisites" id="prerequisites" disabled
-                                [(ngModel)]="skillData.prerequisites" value="{{skillData.prerequisites}}"
-                                class="form-control" required autofocus>
-                        </div> -->
-
                         <button class="my-4 btn btn-lg btn-primary btn-block text-uppercase" type="submit">Send
                             Request</button>
                     </form>
@@ -94,6 +68,5 @@
                         </div>
                     </div>
         </div>
-        <!-- <div class="col-sm-2"></div> -->
     </div>
 </div>

@@ -27,7 +27,7 @@ export class UserNavbarComponent implements OnInit {
 
   notification() {
     if (this.userData.role === 1) {
-      alert("No Notification Yet");
+      alert("Notification Not Available.");
     } else if (this.userData.role === 2) {
       this.router.navigateByUrl("/trainer-dashboard/trainer-notification");
     } else if (this.userData.role == 3) {
@@ -40,7 +40,7 @@ export class UserNavbarComponent implements OnInit {
   logout() {
     localStorage.clear();
     this.router.navigate(["home"]);
-    alert("route");
+    alert("Logged Out Successfully.");
   }
   
 }

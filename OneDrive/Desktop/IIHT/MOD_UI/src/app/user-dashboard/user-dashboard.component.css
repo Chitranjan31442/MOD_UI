@@ -31,3 +31,7 @@ strong {
     border-radius: 50px 20px;
     color: white
 }
+
+.rounded:hover{
+  background:rgb(211, 198, 21);
+}
